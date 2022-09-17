@@ -1,19 +1,45 @@
-import React, { useState } from "react";
-import { Box, Flex, Text, Image, Button, Link, VStack } from "@chakra-ui/react";
+import React from "react";
+import {
+  Box,
+  Flex,
+  Text,
+  Image,
+  Button,
+  Link,
+  VStack,
+  Textarea,
+  Input,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
+import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io";
 import { FiDownload } from "react-icons/fi";
+import { DiCss3, DiReact, DiBootstrap } from "react-icons/di";
+import {
+  SiRedux,
+  SiReactrouter,
+  SiTailwindcss,
+  SiJest,
+  SiCypress,
+  SiMongodb,
+  SiExpress,
+} from "react-icons/si";
+import {
+  AiOutlineMail,
+  AiFillLinkedin,
+  AiOutlineGithub,
+  AiFillHtml5,
+} from "react-icons/ai";
 import picture from "../Picture/soumyanil.jpg";
 import { saveAs } from "file-saver";
 import bobbi_brown from "../BobbiBrownPicture/Screenshot.png";
-import bewakoof from "../BewakoofPicture/CloneScreenshot.png";
-import MongoDBLogo from "../Logos/MongoDB/mongodb.svg";
-import ExpressLogo from "../Logos/ExpressJS/expressjs-icon.svg";
+import buffer from "../BufferPicture/Screenshot.png";
 import MyLogo from "../Logos/MyLogo/My project-1.png";
 import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const HomePage = () => {
-  // const [email, setEmail] = useState();
-  // const [name, setName] = useState();
-  // const [data, setData] = useState({});
+  const form = useRef();
   const handleRedirect = () => {
     saveAs(
       "https://drive.google.com/file/d/1rCW1pG5UYUO8ggqoMbuSpqupnsBt8Rja/view?usp=sharing",
@@ -30,47 +56,41 @@ const HomePage = () => {
 
   const handleSkillsClick = (e) => {
     window.scrollTo({
-      top: 750,
+      top: 700,
       behavior: "smooth",
     });
   };
 
   const handleProjClick = (e) => {
     window.scrollTo({
-      top: 1100,
+      top: 1200,
       behavior: "smooth",
     });
   };
 
   const handleContactClick = (e) => {
     window.scrollTo({
-      top: 1590,
+      top: 2000,
       behavior: "smooth",
     });
   };
 
-  // const handleNameChange = (e) => {
-  //   setName(e.target.value);
-  // };
-
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
-
-  // const handleSubmit = () => {
-  //   let data = { email, name };
-  //   setData(data);
-  //   // emailjs.init("6kijzHMnDVTSXfR4k");
-  //   if (data) {
-  //     console.log("hello");
-  //     emailjs.sendForm(
-  //       "service_xdi7aqq",
-  //       "template_4jgkctc",
-  //       data,
-  //       "6kijzHMnDVTSXfR4k"
-  //     );
-  //   }
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_xdi7aqq",
+        "template_4jgkctc",
+        form.current,
+        "6kijzHMnDVTSXfR4k"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -92,6 +112,7 @@ const HomePage = () => {
         <Flex w="50%" justifyContent="space-evenly">
           <Box
             color="#808080"
+            onClick={(e) => handleAboutClick(e)}
             _hover={{
               cursor: "pointer",
               borderBottom: "3px solid",
@@ -99,16 +120,13 @@ const HomePage = () => {
               color: "#3BACB6",
             }}
           >
-            <Text
-              fontWeight="600"
-              fontSize="xl"
-              onClick={(e) => handleAboutClick(e)}
-            >
+            <Text fontWeight="600" fontSize="xl">
               About
             </Text>
           </Box>
           <Box
             color="#808080"
+            onClick={(e) => handleSkillsClick(e)}
             _hover={{
               cursor: "pointer",
               borderBottom: "3px solid",
@@ -116,16 +134,13 @@ const HomePage = () => {
               color: "#3BACB6",
             }}
           >
-            <Text
-              fontWeight="600"
-              fontSize="xl"
-              onClick={(e) => handleSkillsClick(e)}
-            >
+            <Text fontWeight="600" fontSize="xl">
               Skills
             </Text>
           </Box>
           <Box
             color="#808080"
+            onClick={(e) => handleProjClick(e)}
             _hover={{
               cursor: "pointer",
               borderBottom: "3px solid",
@@ -133,16 +148,13 @@ const HomePage = () => {
               color: "#3BACB6",
             }}
           >
-            <Text
-              fontWeight="600"
-              fontSize="xl"
-              onClick={(e) => handleProjClick(e)}
-            >
+            <Text fontWeight="600" fontSize="xl">
               Projects
             </Text>
           </Box>
           <Box
             color="#808080"
+            onClick={(e) => handleContactClick(e)}
             _hover={{
               cursor: "pointer",
               borderBottom: "3px solid",
@@ -150,11 +162,7 @@ const HomePage = () => {
               color: "#3BACB6",
             }}
           >
-            <Text
-              fontWeight="600"
-              fontSize="xl"
-              onClick={(e) => handleContactClick(e)}
-            >
+            <Text fontWeight="600" fontSize="xl">
               Contact
             </Text>
           </Box>
@@ -206,11 +214,11 @@ const HomePage = () => {
           </Box>
         </Box>
         <Box mt="100px" ml="80px" pt="10px" pl="20px" w="300px" h="280px">
-          <Image borderRadius="100%" h="100%" src={picture} alt="soumyanil" />
+          <Image borderRadius="10%" h="100%" src={picture} alt="soumyanil" />
         </Box>
       </Flex>
 
-      <Box mt="200px">
+      <Box mt="150px">
         <Text
           letterSpacing="0.8px"
           textAlign="center"
@@ -219,119 +227,97 @@ const HomePage = () => {
         >
           Skills
         </Text>
-        <Flex
-          w="93%"
-          m="auto"
-          justifyContent="center"
-          alignItems="center"
-          gap="40px"
-          mt="40px"
+        <Grid
+          mt="30px"
+          templateRows="repeat(4,1fr)"
+          templateColumns="repeat(4,1fr)"
+          gap="6"
         >
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/H/html5-logo-EF92D240D7-seeklogo.com.png"
-              alt="html5"
-            />
-            <span style={{ marginTop: "10px" }}>HTML5</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/C/css3-logo-8724075274-seeklogo.com.png"
-              alt="CSS3"
-            />
-            <span style={{ marginTop: "10px" }}>CSS3</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png"
-              alt="JavaScript"
-            />
-            <span style={{ marginTop: "10px" }}>JavaScript</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/N/nodejs-logo-D26404F360-seeklogo.com.png"
-              alt="Node JS"
-            />
-            <span style={{ marginTop: "10px" }}>Node JS</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png"
-              alt="React JS"
-            />
-            <span style={{ marginTop: "10px" }}>React JS</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/R/redux-logo-9CA6836C12-seeklogo.com.png"
-              alt="Redux"
-            />
-            <span style={{ marginTop: "10px" }}>Redux</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/R/react-router-logo-AB5BFB638F-seeklogo.com.png"
-              alt="React Router"
-            />
-            <span style={{ marginTop: "10px" }}>React Router</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png"
-              alt="Tailwind CSS"
-            />
-            <span style={{ marginTop: "10px" }}>Tailwind CSS</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/B/bootstrap-logo-3C30FB2A16-seeklogo.com.png"
-              alt="Bootstrap"
-            />
-            <span style={{ marginTop: "10px" }}>BootStrap</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png"
-              alt="Jest"
-            />
-            <span style={{ marginTop: "10px" }}>Jest</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://iconape.com/wp-content/files/gj/370774/svg/370774.svg"
-              alt="Cypress"
-            />
-            <span style={{ marginTop: "10px" }}>Cypress</span>
-          </Box>
-          <Box textAlign="center">
-            <Image
-              w="60px"
-              src="https://iconape.com/wp-content/png_logo_vector/github.png"
-              alt="Github"
-            />
-            <span style={{ marginTop: "10px" }}>Github</span>
-          </Box>
-          <Box textAlign="center">
-            <Image w="60px" src={MongoDBLogo} alt="MongoDB" />
-            <span style={{ marginTop: "10px" }}>MongoDB</span>
-          </Box>
-          <Box textAlign="center">
-            <Image w="60px" src={ExpressLogo} alt="ExpressJS" />
-            <span style={{ marginTop: "10px" }}>ExpressJS</span>
-          </Box>
-        </Flex>
+          <GridItem m="auto">
+            <Box>
+              <AiFillHtml5 size={50} />
+              <Text textAlign="center">HTML5</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <DiCss3 size={50} />
+              <Text textAlign="center">CSS3</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <IoLogoJavascript size={50} />
+              <Text textAlign="center">JavaScript</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <IoLogoNodejs size={50} />
+              <Text textAlign="center">Node JS</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <DiReact size={50} />
+              <Text textAlign="center">React JS</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <SiRedux size={50} />
+              <Text textAlign="center">Redux</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <SiReactrouter size={50} />
+              <Text textAlign="center">React Router</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <SiTailwindcss size={50} />
+              <Text textAlign="center">Tailwind CSS</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <DiBootstrap size={50} />
+              <Text textAlign="center">BootStrap</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <SiJest size={50} />
+              <Text textAlign="center">Jest</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <SiCypress size={50} />
+              <Text textAlign="center">Cypress</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <AiOutlineGithub size={50} />
+              <Text textAlign="center">Github</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <SiMongodb size={50} />
+              <Text textAlign="center">MongoDB</Text>
+            </Box>
+          </GridItem>
+          <GridItem m="auto">
+            <Box>
+              <SiExpress size={50} />
+              <Text textAlign="center">ExpressJS</Text>
+            </Box>
+          </GridItem>
+        </Grid>
       </Box>
       <Box mt="150px">
         <Text fontSize="4xl" textAlign="center" fontWeight="600">
@@ -372,15 +358,15 @@ const HomePage = () => {
             </Flex>
           </Box>
           <Box>
-            <Link href="https://bewakoof-project.netlify.app/" target="_blank">
-              <Image w="350px" h="250px" src={bewakoof} alt="bewakoof" />
+            <Link href="https://bufferr.netlify.app" target="_blank">
+              <Image w="350px" h="250px" src={buffer} alt="bewakoof" />
             </Link>
             <Flex mt="30px" justifyContent="center" gap="30px">
               <Text fontSize="xl" fontWeight="600" textAlign="center">
-                Bewakoof Clone
+                Buffer Clone
               </Text>
               <Link
-                href="https://github.com/soumyanil22/illegal-mark-7169/tree/master/bewakoof-clone"
+                href="https://github.com/soumyanil22/painful-harbor-5807"
                 target="_blank"
               >
                 <Button w="50px" h="30px" colorScheme="black" variant="ghost">
@@ -396,8 +382,9 @@ const HomePage = () => {
           </Box>
         </Flex>
       </Box>
-      <Box backgroundColor="gray.100" borderRadius="30px" h="600px" mt="300px">
+      <Box backgroundColor="gray.100" borderRadius="30px" h="650px" mt="300px">
         <Text
+          mb="20px"
           textDecoration="underline"
           fontSize="3xl"
           textAlign="center"
@@ -407,17 +394,40 @@ const HomePage = () => {
           CONTACT ME
         </Text>
         <VStack>
-          <form>
-            <label htmlFor="name">Name</label>
-            <input id="name" type="text" />
-            <label htmlFor="email">Email</label>
-            <input type="text" />
-            <input type="text" placeholder="Enter your message" />
-            <button style={{ height: "300px" }} type="submit">
+          <form ref={form} onSubmit={handleSubmit}>
+            <label style={{ fontSize: "18px" }} htmlFor="name">
+              Name
+            </label>
+            <br />
+            <Input
+              mt="10px"
+              mb="10px"
+              w="300px"
+              id="name"
+              name="name"
+              type="text"
+            />
+            <br />
+            <label style={{ fontSize: "18px" }} htmlFor="email">
+              Email
+            </label>
+            <br />
+            <Input
+              mt="10px"
+              mb="10px"
+              w="300px"
+              id="email"
+              name="email"
+              type="text"
+            />
+            <Textarea mt="10px" name="message" />
+            <Button variant="outline" w="100px" mt="10px" type="submit">
               Send
-            </button>
+            </Button>
           </form>
         </VStack>
+        <br />
+        <br />
         <hr
           style={{
             height: "2px",
@@ -429,13 +439,34 @@ const HomePage = () => {
         />
         <Box m="auto" mt="30px" w="80%">
           <Text fontSize="xl" textAlign="center">
-            You can reach out to me at:
+            You can also reach out to me at:
           </Text>
-          <Box>
-            <Box></Box>
-            <Box></Box>
-            <Box></Box>
-          </Box>
+          <Flex gap="10px" m="auto" mt="10px" justifyContent="center">
+            <Box>
+              <Link href="mailto:soumyanil22@gmail.com">
+                <AiOutlineMail size={30} />
+              </Link>
+            </Box>
+            <Box>
+              <Link
+                href="https://www.linkedin.com/in/soumyanil-podder-769008165/"
+                target="_blank"
+              >
+                <AiFillLinkedin size={30} />
+              </Link>
+            </Box>
+            <Box>
+              <Link href="https://github.com/soumyanil22" target="_blank">
+                <AiOutlineGithub size={30} />
+              </Link>
+            </Box>
+          </Flex>
+          <Flex mt="20px" justifyContent="center">
+            <Text fontSize="lg">Phone: 9748604906</Text>
+          </Flex>
+          <Flex justifyContent="center">
+            <Text fontSize="lg">Email: soumyanil22@gmail</Text>
+          </Flex>
         </Box>
       </Box>
     </>
