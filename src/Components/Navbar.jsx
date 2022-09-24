@@ -30,7 +30,7 @@ function Navbar() {
     },
   ];
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed top-0">
       <div>
         <h1 className="text-5xl font-signature ml-2">Soumyanil</h1>
       </div>
