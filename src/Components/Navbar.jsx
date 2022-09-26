@@ -18,11 +18,11 @@ function Navbar() {
 
     {
       id: 3,
-      link: "portfolio",
+      link: "skills",
     },
     {
       id: 4,
-      link: "skills",
+      link: "projects",
     },
     {
       id: 5,

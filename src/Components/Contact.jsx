@@ -60,6 +60,10 @@ const Contact = () => {
             </button>
           </form>
         </div>
+        <div className="flex flex-col items-end justify-center">
+          <h4 className="text-center">Email: soumyanil22@gmail.com</h4>
+          <h4 className="text-center mr-10">Contact: +91 9748604906</h4>
+        </div>
       </div>
     </div>
   );
