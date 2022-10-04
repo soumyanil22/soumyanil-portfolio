@@ -2,7 +2,6 @@ import React from "react";
 import Bobbi from "../assets/portfolio/Screenshot.png";
 import Buffer from "../assets/portfolio/Screenshot1.png";
 import Airbnb from "../assets/portfolio/Screenshot2.png";
-import GitHubCalendar from "react-github-calendar";
 
 const Projects = () => {
   const portfolios = [
@@ -69,7 +68,6 @@ const Projects = () => {
             );
           })}
         </div>
-        <GitHubCalendar year="2022" username="soumyanil22" />
       </div>
     </div>
   );

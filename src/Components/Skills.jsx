@@ -14,6 +14,7 @@ import jest from "../assets/jest.png";
 import cypress from "../assets/cypress.png";
 import webpack from "../assets/webpack.png";
 import typescript from "../assets/typescript.png";
+import GitHubCalendar from "react-github-calendar";
 
 const Skills = () => {
   const techs = [
@@ -133,6 +134,9 @@ const Skills = () => {
             );
           })}
         </div>
+      </div>
+      <div className="flex justify-center">
+        <GitHubCalendar year="2022" username="soumyanil22" />
       </div>
     </div>
   );
