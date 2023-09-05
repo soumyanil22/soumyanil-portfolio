@@ -476,4 +476,4 @@
 // export default HomePage;
 
 // // Padding from left = 50px
-// // TODO: Change project section to grid later
+// TODO: Change project section to grid later

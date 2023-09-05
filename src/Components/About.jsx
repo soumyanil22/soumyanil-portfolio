@@ -13,18 +13,19 @@ const About = () => {
           </p>
         </div>
         <p className="text-xl mt-20">
-          Hi, I'm Soumyanil Podder. I am born and brought up in Kolkata. I am a
-          foodie, techie, gamer, dog lover, and theist. I have a degree in Hotel
-          and Hospitality Administration from IHM Chandigarh. I always loved
-          coding but due to personal circumstances had to pursue other field.
-          But god had other plans for me and I was re-united with my love, that
-          is coding during the pandemic.
+          Soumyanil Podder, a Kolkata native, boasts a love for food,
+          technology, gaming, dogs, and a strong belief in theism. His academic
+          background includes a degree in Hotel and Hospitality Administration
+          from IHM Chandigarh. Despite having an enduring passion for coding,
+          circumstances in his life initially directed him towards a different
+          path. Nevertheless, fate intervened during the pandemic, rekindling
+          his connection with coding.
         </p>
         <br />
         <p className="text-xl">
           A web developer with a vast array of knowledge in many different front
           end and backend languages, responsive frameworks, databases, and best
-          coding practices. Look forward to using my skills for gaining more
+          coding practices. Look forward to using his skills for gaining more
           experience.
         </p>
       </div>
