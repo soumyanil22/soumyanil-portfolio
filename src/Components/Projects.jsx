@@ -17,7 +17,7 @@ const Projects = () => {
       src: Buffer,
       desc: "Functional clone of Buffer made using React, Redux, Chakra UI and other libraries (collaborative project)",
       demo: "https://bufferr.netlify.app/",
-      github: "https://github.com/soumyanil22/painful-harbor-5807",
+      github: "https://github.com/soumyanil22/Buffer_clone",
     },
     {
       id: 3,
