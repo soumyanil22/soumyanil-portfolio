@@ -117,11 +117,6 @@ const Skills = () => {
       style: "shadow-orange-500",
     },
     {
-      id: 2,
-      title: "Remote Collaboration",
-      style: "shadow-blue-500",
-    },
-    {
       id: 3,
       title: "Adaptability",
       style: "shadow-yellow-500",
@@ -150,7 +145,7 @@ const Skills = () => {
           </p>
           <p className="py-6">These are the technologies I've worked with</p>
         </div>
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-8 text-center py-8 px-12 sm:px-0">
           {techs.map(({ id, src, title, style }) => {
             return (
               <div
@@ -170,7 +165,7 @@ const Skills = () => {
             Soft Skills
           </p>
         </div>
-        <div className="w-full mt-4 grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-10 sm:px-0">
+        <div className="w-full mt-4 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center py-8 px-10 sm:px-0">
           {softSkills.map(({ id, title, style }) => {
             return (
               <div

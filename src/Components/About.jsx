@@ -13,13 +13,17 @@ const About = () => {
           </p>
         </div>
         <p className="text-xl mt-6">
-          Soumyanil Podder, a Kolkata native, boasts a love for food,
-          technology, gaming, dogs, and a strong belief in theism. His academic
-          background includes a degree in Hotel and Hospitality Administration
-          from IHM Chandigarh. Despite having an enduring passion for coding,
-          circumstances in his life initially directed him towards a different
-          path. Nevertheless, fate intervened during the pandemic, rekindling
-          his connection with coding.
+          A passionate coder, deeply enamored with diverse interests including
+          food, technology, gaming, dogs, and a strong belief in theism.
+          Academic background includes a degree in Hotel and Hospitality
+          Administration from IHM Chandigarh. Despite a lasting passion for
+          coding, life circumstances initially directed towards a different
+          path. Nevertheless, fate intervened during the pandemic, reigniting
+          the connection with coding. In the realm of web development, a skilled
+          practitioner with a vast array of knowledge in various front-end and
+          back-end languages, responsive frameworks, databases, and dedication
+          to best coding practices. Eagerly looks forward to utilizing these
+          skills for gaining more experience.
         </p>
         <br />
         <p className="text-xl">

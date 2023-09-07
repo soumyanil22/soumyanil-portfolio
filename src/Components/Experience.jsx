@@ -21,24 +21,40 @@ const Experience = () => {
         </h5>
         <p className="text-xl mt-5"></p>
         <br />
-        <p className="text-xl">
-          Worked on the backend involved orc hestrating a robust system that
-          harnessed the capabilities of MongoDB, GraphQL API, NodeJS, ExpressJS,
-          and Redis. The backend infrastructure was meticulously designed to
-          facilitate data storage, retrieval, and efficient communication
-          between various components of the application. On the frontend,
-          ReactJS and NextJS were instrumental in crafting an engaging user
-          interface that seamlessly interacted with the backend, delivering a
-          smooth and responsive user experience. Additionally, to enhance the
-          organization's content management workflow, the Strapi CMS was
-          strategically integrated with the product's frontend. This integration
-          streamlined the process of creating, editing, and managing content,
-          empowering the team to easily control and update the information
-          presented to users. This harmonious blend of technologies on both the
-          backend and frontend fronts ultimately resulted in a dynamic and
-          user-friendly platform, poised to meet the organization's goals and
-          user expectations.
-        </p>
+        <ul className="text-xl list-disc list-inside">
+          <li>
+            Orchestrated a robust backend system utilizing MongoDB, GraphQL API,
+            NodeJS, ExpressJS, and Redis.
+          </li>
+          <li>
+            Designed a meticulous backend infrastructure for efficient data
+            storage, retrieval, and seamless communication between application
+            components.
+          </li>
+          <li>
+            Developed a user-friendly frontend with ReactJS and NextJS for an
+            engaging user interface.
+          </li>
+          <li>
+            Ensured smooth interaction between the frontend and backend,
+            delivering a responsive user experience.
+          </li>
+          <li>
+            Integrated Strapi CMS to streamline content management, simplifying
+            the creation, editing, and management of content.
+          </li>
+          <li>
+            Empowered the team to control and update information presented to
+            users.
+          </li>
+          <li>
+            Achieved a harmonious blend of technologies on both the backend and
+            frontend for a dynamic and user-friendly platform.
+          </li>
+          <li>
+            Successfully met organization goals and exceeded user expectations.
+          </li>
+        </ul>
       </div>
     </div>
   );
