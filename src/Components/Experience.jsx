@@ -21,7 +21,7 @@ const Experience = () => {
         </h5>
         <p className="text-xl mt-5"></p>
         <br />
-        <ul className="text-xl list-disc list-inside">
+        <ul className="text-lg list-disc list-inside">
           <li>
             Orchestrated a robust backend system utilizing MongoDB, GraphQL API,
             NodeJS, ExpressJS, and Redis.
